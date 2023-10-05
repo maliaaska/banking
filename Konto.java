@@ -1,31 +1,34 @@
 package com.milewskiarkadiuszmodul6.banking;
 
 public class Konto {
-    public String numerRachunku = "1231238  292939 2932 9392";
-    private double stanKonta = 111.923;
+    private String numerRachunku;
+    private double stanKonta = 1223.03;
     private boolean debet = false;
 
 
     public void getAccount() {
         System.out.println(numerRachunku);
     }
-    public void accountBalance() {
-            System.out.println(stanKonta);
+    public double getAccountBalance() {
+          return stanKonta;
     }
     public boolean isDebet() {
-        if ( debet == false ) {
-            System.out.println("nie mozesz zrobic debetu na koncie");
+        if (debet) {
+            System.out.println(
+                    " Twoje konto nie jest debetowe wiec nie możesz zrobić na nim debetu.");
+        } else {
+            System.out.println("Twoje konto posiada opcję debetu ");
         }
+
         return debet;
     }
-
 
     public void setStanKonta(double stan) {
         System.out.println(stan);
     }
 
-    public void setNumerRachunku(String numer) {
-        System.out.println(numer);
+    public String setNumerRachunku(String numer) {
+        return numer;
     }
 
     public boolean setDebet(boolean debet) {
@@ -46,7 +49,6 @@ public class Konto {
                 System.out.println("The account does not have a debet option. You cannot withdraw this amount.");
             }
         }
-
         return srodki;
     }
 }
