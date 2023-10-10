@@ -11,19 +11,20 @@ public class Task1Modul6 {
         String numerkonta = scanner.nextLine();
         konto.setNumerRachunku(numerkonta);
         double stanKonta = konto.getAccountBalance();
-        boolean debet = konto.isDebet();
+        boolean debet = konto.isDebet(); // Jak można ominąć wydruk słówka null?
+
 
         konto.setStanKonta(stanKonta);
 
-        System.out.println("Twoj numer rachunku to " + numerkonta + " and current balance is " + stanKonta + debet);
+        System.out.println("Twoj numer rachunku to " + numerkonta + " i obecny stan konta to " + stanKonta);
+        System.out.println("Konto posiada debet: " + debet);
 
+        System.out.println("Podaj ile chcesz wpłacić środków?");
+        double wplata = scanner.nextDouble();
+        konto.setWplacSrodki(wplata);
+        System.out.println("Twoj obecny stan konta to " + stanKonta);  // Dlaczego w tym przypadku nie pobiera zauktualizowanego stanu konta?
+        System.out.println(stanKonta);
 
-        konto.getAccount();
-        konto.isDebet();
-
-        if (!debet) {
-            System.out.println("NIE jest debetowe!");
-        }
     }
 
 

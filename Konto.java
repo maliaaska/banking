@@ -3,7 +3,7 @@ package com.milewskiarkadiuszmodul6.banking;
 public class Konto {
     private String numerRachunku;
     private double stanKonta = 1223.03;
-    private boolean debet = false;
+    private final boolean debet = false;
 
 
     public void getAccount() {
@@ -13,14 +13,7 @@ public class Konto {
           return stanKonta;
     }
     public boolean isDebet() {
-        if (debet) {
-            System.out.println(
-                    " Twoje konto nie jest debetowe wiec nie możesz zrobić na nim debetu.");
-        } else {
-            System.out.println("Twoje konto posiada opcję debetu ");
-        }
-
-        return debet;
+        return false;
     }
 
     public void setStanKonta(double stan) {
@@ -31,13 +24,13 @@ public class Konto {
         return numer;
     }
 
-    public boolean setDebet(boolean debet) {
-        return debet;
-    }
-
-    private double wplacSrodki(double kwota) {
+    public double setWplacSrodki(double kwota) {
         stanKonta = stanKonta + kwota;
+        System.out.println("Twoj zaktualizowany stan konta to " + stanKonta);
         return stanKonta;
+
+
+
     }
 
     private double wyplacSrodki(double kwota) {
