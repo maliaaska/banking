@@ -26,6 +26,7 @@ public class Konto {
     public void setWyplacSrodki(double kwota) {
         if (debet) {
             this.stanKonta = stanKonta + kwota;
+            System.out.println(" Twój obecny stan konta po wyplacie to " + kwota);
         } else if ( kwota > this.stanKonta){
             System.out.println("Nie masz wystarczających środków na koncie. Prosimy spróbować póżniej");
         } else {
