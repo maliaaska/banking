@@ -1,14 +1,11 @@
 package com.milewskiarkadiuszmodul6.banking;
 
 public class Konto {
-    private String numerRachunku;
-    private double stanKonta = 1223.03;
+    private double stanKonta = 1223.86;
     private final boolean debet = false;
 
 
-    public void getAccount() {
-        System.out.println(numerRachunku);
-    }
+
     public double getAccountBalance() {
           return stanKonta;
     }
@@ -16,32 +13,25 @@ public class Konto {
         return false;
     }
 
-    public void setStanKonta(double stan) {
-        System.out.println(stan);
-    }
 
     public String setNumerRachunku(String numer) {
         return numer;
     }
 
-    public double setWplacSrodki(double kwota) {
-        stanKonta = stanKonta + kwota;
-        System.out.println("Twoj zaktualizowany stan konta to " + stanKonta);
-        return stanKonta;
-
-
-
+    public void setWplacSrodki(double kwota) {
+        this.stanKonta = stanKonta + kwota;
+///// dlaczego ta metoda nie dziala przy przypisuwaniu jej do nowego double (patrz klasa Konto)
     }
 
-    private double wyplacSrodki(double kwota) {
-        double srodki = stanKonta;
-        if (!debet) {
-            srodki = srodki - kwota;
+    public void setWyplacSrodki(double kwota) {
+        if (debet) {
+            this.stanKonta = stanKonta + kwota;
+        } else if ( kwota > this.stanKonta){
+            System.out.println("Nie masz wystarczających środków na koncie. Prosimy spróbować póżniej");
         } else {
-            if (debet && (srodki - kwota) < 0) {
-                System.out.println("The account does not have a debet option. You cannot withdraw this amount.");
-            }
+            this.stanKonta = stanKonta - kwota;
+            System.out.println(" Twój obecny stan konta po wyplacie to " + kwota);
         }
-        return srodki;
+
     }
 }

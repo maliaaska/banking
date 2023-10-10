@@ -8,22 +8,23 @@ public class Task1Modul6 {
         Konto konto = new Konto();
 
         System.out.println("Wprowadź numer swojego konta skladajacego sie z 16-stu cyfr");
-        String numerkonta = scanner.nextLine();
-        konto.setNumerRachunku(numerkonta);
+        String numerKonta = scanner.nextLine();
+        konto.setNumerRachunku(numerKonta);
         double stanKonta = konto.getAccountBalance();
-        boolean debet = konto.isDebet(); // Jak można ominąć wydruk słówka null?
+        boolean debet = konto.isDebet();
 
-
-        konto.setStanKonta(stanKonta);
-
-        System.out.println("Twoj numer rachunku to " + numerkonta + " i obecny stan konta to " + stanKonta);
+        System.out.println("Twoj numer rachunku to " + numerKonta + " i obecny stan konta to " + stanKonta);
         System.out.println("Konto posiada debet: " + debet);
 
         System.out.println("Podaj ile chcesz wpłacić środków?");
-        double wplata = scanner.nextDouble();
-        konto.setWplacSrodki(wplata);
-        System.out.println("Twoj obecny stan konta to " + stanKonta);  // Dlaczego w tym przypadku nie pobiera zauktualizowanego stanu konta?
-        System.out.println(stanKonta);
+        double kwota = scanner.nextDouble();
+        konto.setWplacSrodki(kwota);
+//        11111 // Dlaczego w tym przypadku nie pobiera zauktualizowanego stanu konta?
+        System.out.println(konto.getAccountBalance());
+
+        System.out.println("Napisz ile chciałbyś wypłacić pieniędzy.");
+        kwota = scanner.nextDouble();
+        konto.setWyplacSrodki(kwota);
 
     }
 
