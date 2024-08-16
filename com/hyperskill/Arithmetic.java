@@ -2,7 +2,7 @@ package com.hyperskill;
 
 import java.util.Scanner;
 
-public class Aritmethic {
+public class Arithmetic {
 
         /*
         Given two integers, your task is to calculate their sum, multiplication result,
