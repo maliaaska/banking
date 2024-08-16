@@ -1,28 +1,31 @@
 package com.hyperskill;
+
 import org.w3c.dom.ls.LSOutput;
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        /*
+        Given two integers, your task is to calculate their sum, multiplication result,
+        and the result of the first integer divided by the second integer (without decimal places).
+        You can assume that the second integer is never zero. First, scan two integers from the standard input.
+        Then, print the three results in separate lines: the sum, multiplication result, and division result.
+         */
         // Create a Scanner object to read input
-        Scanner in = new Scanner(System.in);
-
-        // Read the next integer
-        int n = in.nextInt();
-
-        int square = n * n;
-        int cube = n * n * n;
-        int fourthPower = n * n * n * n;
-
-        System.out.println(square);
-        System.out.println(cube);
-        System.out.println(fourthPower);
+        Scanner scan = new Scanner(System.in);
+        // Read the first integer
+        int num1 = scan.nextInt();
+        // Read the second integer
+        int num2 = scan.nextInt();
 
 
+        int sum = num1 + num2;
+        int mult = num1 * num2;
+        int division = num1 / num2;
+        System.out.println(sum);
+        System.out.println(mult);
+        System.out.println(division);
 
-        // Compute and print the cube of n
-
-        // Compute and print the fourth power of n
     }
 }
